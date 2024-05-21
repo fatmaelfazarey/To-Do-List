@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="website icon" type="png" href="icons.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Kanit Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="container mainVew">
+        <h2 class="title">TODO LIST</h2>
+        <div class="sch_btn">
+            <div class="search">
+                <input type="text" placeholder="Search note..." id='searchBox'>
+                <i class="fa-solid fa-magnifying-glass" onclick=searchList()></i>
+            </div>
+            <div style="display: flex; gap:10px; flex-grow: 1;">
+                <select name="note type" id="lest" value="all" onchange=selectValue()>ALL
+                    <option value="All">All</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Incomplete">Incomplete</option>
+                </select>
+                <button class="mode" onclick=changeMode()>
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        <div id='content'>
+            <img src="Detective-check-footprint 1.png" alt="" class="remove">
+            <p style="font-size: 18px; font-weight: 200;" class="remove">Empty...</p>
+        </div>
+        <button class="add" onclick=newTask()>
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </section>
+    <section class="blur">
+        <div class=" container newTask">
+            <h2 class="title">New Note</h2>
+            <input type="text" placeholder="Input your note..." required id="mainTask">
+            <div class="date">
+                <input type="datetime-local" id="date"  placeholder="2024-05-21 19:30">
+            </div>
+            <div class="btns">
+                <button class="cancel" onclick="closeNweTaskWindow()">CANCEL</button>
+                <button class="apply" onclick='createNewTask()'>APPLY</button>
+            </div>
+        </div>
+    </section>
+    <script src="todo.js"></script>
+</body>
+
+</html>

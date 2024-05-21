@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    min-width: 280px;
+    position: relative;
+}
+
+:root {
+    --main-color: #6C63FF;
+    --white: #F7F7F7;
+    --black: #252525;
+    --radius: 4px;
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+}
+
+.mainVew {
+    text-align: center;
+    min-height: calc(100vh - 40px);
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750PX;
+    }
+}
+
+/* Medium Screen */
+@media (min-width:992px) {
+    .container {
+        width: 800PX;
+    }
+}
+
+/* Large Screen */
+@media (min-width:1200px) {
+    .container {
+        width: 800PX;
+    }
+}
+
+.container .title,
+.newTask .title {
+    font-size: 26px;
+    font-weight: 200;
+    margin: 0 auto;
+}
+
+.sch_btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+    margin: 20px 0;
+    /* flex-wrap: wrap; */
+}
+
+.sch_btn>* {
+    height: 40px;
+}
+
+.search {
+    border: 1px solid var(--main-color);
+    display: flex;
+    align-items: center;
+    flex-grow: 12;
+    border-radius: var(--radius);
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: inherit;
+    caret-color: var(--main-color);
+}
+
+.search .fa-magnifying-glass {
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.fa-chevron-down {
+    background-color: transparent;
+    margin-left: 30px;
+}
+
+select {
+    outline: none;
+    border: 2px solid var(--main-color);
+    border-radius: var(--radius);
+    background-color: var(--main-color);
+    color: white;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    width: fit-content;
+    flex-grow: 1;
+}
+
+option {
+    color: var(--black);
+    background-color: white;
+}
+
+.mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+button {
+    border: none;
+    outline: none;
+    border-radius: var(--radius);
+    background-color: var(--main-color);
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.fa-moon {
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.add {
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 200;
+}
+
+.add:hover {
+    transform: rotate(20deg);
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+}
+
+.add .fa-plus {
+    background-color: transparent;
+}
+
+/* newTask */
+
+.blur {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    display: none;
+}
+
+.newTask {
+    background-color: var(--white);
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 440PX;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 2px solid var(--main-color); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+/* Medium Screen */
+@media (max-width:768px) {
+    .newTask {
+        width: 340PX;
+    }
+}
+
+@media (max-width:468px) {
+    .newTask {
+        width: 240PX;
+        padding: 20px 10px;
+    }
+}
+
+.newTask .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+}
+
+.newTask .btns>* {
+    font-size: 16px;
+    padding: 2px 8px;
+    border: 1px solid var(--main-color);
+}
+
+.newTask .btns .cancel {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+.newTask input {
+    border: 1px solid var(--main-color);
+    border-radius: var(--radius);
+    height: 40px;
+    padding: 0 10px;
+    background-color: transparent;
+    outline: none;
+    color: inherit;
+    caret-color: var(--main-color);
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    caret-color: var(--main-color);
+    width: 100%;
+}
+
+.newTask [for="date"] {
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.task {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--main-color);
+    max-width: 100%;
+    margin-right: 15px;
+    padding: 20px 10px;
+    justify-content: space-between;
+
+}
+
+.done {
+    position: relative;
+}
+
+.done::after {
+    content: "";
+    height: 2px;
+    width: calc(100% - 20px);
+    background-color: grey;
+    opacity: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    margin-left: 10px;
+}
+
+.task:hover {
+    cursor: pointer;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.checkTask {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: transparent;
+}
+
+.labelTask {
+    width: 100%;
+    font-weight: 400;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.labelTask span {
+    font-size: 12px;
+    font-weight: 200;
+    transition: .4;
+}
+
+.icons {
+    display: none;
+    transition: .3;
+}
+
+.task:hover>.icons {
+    display: flex;
+}
+
+.icons>i {
+    font-weight: 10;
+    margin-left: 10px;
+}
+
+#content {
+    overflow-y: scroll;
+    height: 550px;
+    max-width: 450px;
+    margin: auto;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+    margin-right: 20px;
+    /* box-shadow: inset 0 0 5px rgba(209, 209, 209, 0.801); */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
